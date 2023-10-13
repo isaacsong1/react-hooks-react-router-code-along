@@ -5,14 +5,14 @@ import { useParams } from "react-router-dom";
 
 function UserProfile() {
     const params = useParams();
-    console.log(params);
+    const user = users.find(user => user.id === parseInt(params.id));
     return(
         <>
         <header>
             <NavBar />
         </header>
         <main>
-            <h1>User Profile</h1>
+            <h1>{user.name}</h1>
         </main>
         </>
     );      
